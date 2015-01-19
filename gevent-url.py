@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-__author__ = '__main__'
+__author__ = 'Kane'
 
 from gevent import monkey; monkey.patch_all()
 import gevent
