@@ -65,9 +65,10 @@ def poll(start_i, start_j):
                 res = opener.open(req)
                 data = res.read()
                 print data
-            except urllib2.HTTPError:
-                on_http_error(start_i, start_j)
-                break;
+            except urllib2.HTTPError, test:
+                if test.code == 429:
+                    on_http_error(start_i, start_j)
+                    break;
 
             start_j = start_j + 1
             time.sleep(1)
